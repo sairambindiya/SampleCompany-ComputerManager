@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "403bdddb-9beb-402e-915e-5fa09af0ceb9",
+		"name": "SampleCompany-ComputerManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15410280"
+	},
+	"item": [
+		{
+			"name": "create computer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"macAddress\": \"00:60:00\",\n    \"computerName\": \"Mac\",\n    \"ipAddress\": \"192.168.2.3\",\n    \"employeeAlias\": \"Bin\",\n    \"description\": \"Test computer\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/computer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"computer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read computer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/computer/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"computer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update computer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"macAddress\": \"00:30\",\n    \"computerName\": \"Asus\",\n    \"ipAddress\": \"192.168.1.3\",\n    \"employeeAlias\": \"ABC\",\n    \"description\": \"Test computer\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/computer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"computer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove computer",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/computer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"computer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read computers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/computer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"computer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification service",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"level\": \"warning\",\n        \"employeeAbbreviation\": \"Bin\",\n        \"message\": \"more than 3 computers are assigned\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
